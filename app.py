@@ -15,26 +15,7 @@ from textblob import TextBlob
 import cleantext
 
 # Configure your OpenAI API key
-openai.api_key = "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"
-
-# # Load and preprocess your data for sentiment analysis
-# df = pd.read_csv('merged_dataset.csv')
-# df.dropna(inplace=True)
-# blanks = [i for i, lb, rv in df.itertuples() if type(rv) == str and rv.isspace()]
-# df.drop(blanks, inplace=True)
-
-# # Split data into train and test sets
-# X = df['review']
-# y = df['label']
-# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
-
-# # Train the sentiment analysis model
-# tfidf_vectorizer = TfidfVectorizer(max_features=5000)
-# X_train_tfidf = tfidf_vectorizer.fit_transform(X_train)
-# X_test_tfidf = tfidf_vectorizer.transform(X_test)
-
-# sentiment_model = LinearSVC()
-# sentiment_model.fit(X_train_tfidf, y_train)
+openai.api_key = ""
 
 def generate_chatbot_response(prompt):
     response = openai.Completion.create(
@@ -58,32 +39,7 @@ def sentiment_analysis():
             else:
                 st.write('Neutral')
         
-
-
-
-        
-
-            
-
-        
-
 def chatbot():
-    # st.header("Chatbot")
-    # st.write("Welcome to the Product Inquiry Chatbot!")
-    # st.write("Type 'exit' to end the conversation.")
-
-    # while True:
-    #     user_input = st.text_input("You:", "")
-
-    #     if user_input.lower() == 'exit':
-    #         st.write("Chatbot: Goodbye!")
-    #         break
-
-    #     # Process user input and generate chatbot response
-    #     prompt = f"You: {user_input}\nChatbot:"
-    #     chatbot_response = generate_chatbot_response(prompt)
-
-    #     st.write(f"Chatbot: {chatbot_response}")
     st.subheader("Chatbot")
     user_input = st.text_input("Ask a question or provide an inquiry:")
     if st.button("Chat"):
