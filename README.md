@@ -3,5 +3,5 @@
 streamlit run app.py --server.port 5000
 ```
 
-# Open AI api
+# Open AI API
 Insert your Open AI API from https://platform.openai.com/account/api-keys in the app.py file
